@@ -1,35 +1,33 @@
 #Import logging for standard logging
 import logging
 
-#Import os and line 4 to access .env file for environment variables
+#Import os and line 6 to access .env file for environment variables
 import os
 from dotenv import load_dotenv
 
-#import argparse
-
-#parser = argparse.ArgumentParser()
-#parser.add_argument("-l", "--log", dest="logLevel", choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'], help="Set the logging level")
-
-#args = parser.parse_args()
-#if args.logLevel:
-#    logging.basicConfig(level=getattr(logging, args.logLevel))
-
 #Create and config logger
-logging.basicConfig(filename='std.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+#Change filemode from 'w' to 'a' if you want to append rather than overwrite
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename='std.log',
+    filemode='w',
+    format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
 
-logger=logging.getLogger() 
+logger=logging.getLogger()
 
 #Set threshold of logger to DEBUG 
-logger.setLevel(logging.DEBUG) 
+logger.setLevel(logging.DEBUG)
 
 load_dotenv() 
  
-#Print env_var from .env
-print(os.environ['NAME'])  
 #To local file
-logger.info("Hello World!")
-logger.info(os.environ['NAME'])
+logger.warning("Hello World!")
+logger.debug(os.environ['NAME'])
 logger.info(os.environ['MESSAGE'])
+
+#Print env_var from .env
+print(os.environ['NAME'])
 
 #To the console
 print("Hello world!")
