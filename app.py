@@ -5,6 +5,7 @@ import logging
 import os
 from dotenv import load_dotenv
 
+
 #Create and config logger
 #Change filemode from 'w' to 'a' if you want to append rather than overwrite
 logging.basicConfig(
