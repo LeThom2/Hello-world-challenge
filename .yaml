@@ -1,6 +1,0 @@
-- name: Copy env var to local file
-  ansible.builtin.copy:
-    src: C:\Users\P432884\OneDrive - Nationwide Building Society\Desktop\HelloWorldTXT
-    dest: C:\Users\P432884\OneDrive - Nationwide Building Society\Desktop\Hello-world-challenge
-    owner: true 
-    group: true

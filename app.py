@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 
 
 #Create and config logger
-#Change filemode from 'w' to 'a' if you want to append rather than overwrite
+#Filemode 'w' for overwrite, 'a' to append
 logging.basicConfig(
     level=logging.DEBUG,
     filename='std.log',
-    filemode='w',
+    filemode='a',
     format=' %(asctime)s - %(name)s - %(levelname)s - %(message)s'
     )
 
