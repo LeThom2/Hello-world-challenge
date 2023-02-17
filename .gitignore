@@ -10,4 +10,4 @@
 *.log
 
 # keys
-tfkey
+./tfkey
