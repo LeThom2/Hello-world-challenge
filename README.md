@@ -1,8 +1,10 @@
 # Hello-world-challenge
 My Hello world challenge as part of the new starter onboarding in the Horizon team
+These are merely notes for myself
 
 ## Requirements
 Install: Python(3), Terraform, Elasticsearch, Logstash, Kibana, Filebeat, Ansible
+Access to AWS account
 
 ### Launch
 Elasticsearch -> Kibana -> Filebeat -> Logstash
