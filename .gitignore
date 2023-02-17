@@ -7,7 +7,4 @@
 *.tfstate.*
 
 # .log files
-*.log
-
-# keys
-*/.tfkey
+*.loggit add
