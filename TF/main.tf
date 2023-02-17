@@ -17,7 +17,7 @@ resource "aws_instance" "EC2-TF" {
 resource "aws_security_group" "TF_security_group" {
   name        = "security group using terraform"
   description = "security group using terraform"
-  vpc_id      = "vpc-086be2e9aa0986d7d"
+  vpc_id      = "vpc-0de3e5f349e7906c0"
 
   #inbound rules
   ingress {

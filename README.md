@@ -1,5 +1,5 @@
 # Hello-world-challenge
-My Hello world challenge as part of the new starter onboarding in the Horizon team
+My Hello world challenge as part of the new starter onboarding in the Horizon team.
 These are merely notes for myself
 
 ## Requirements
