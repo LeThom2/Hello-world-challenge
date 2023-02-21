@@ -5,10 +5,5 @@ variable "ami" {
 
 variable "instance_type" {
   type    = string
-  default = "t2.micro"
-}
-
-variable "subnet_id" {
-  type    = string
-  default = "subnet-063bbe3b9332cad35"
+  default = "t3.medium"
 }

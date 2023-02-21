@@ -7,17 +7,18 @@ resource "aws_instance" "EC2-TF" {
   instance_type   = var.instance_type
   security_groups = [aws_security_group.TF_security_group.name]
   key_name = "TF_key"
-  user_data = file("logstash.sh")
+  user_data = file("logstashP2P.sh")
 
   tags = {
     Name = "EC2-TF"
   }
 }
 
+
 resource "aws_security_group" "TF_security_group" {
   name        = "security group using terraform"
   description = "security group using terraform"
-  vpc_id      = "vpc-086be2e9aa0986d7d"
+  vpc_id      = "vpc-09f4f519ea56af99f"
 
   #inbound rules
   ingress {
@@ -27,6 +28,21 @@ resource "aws_security_group" "TF_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    description = "HTTPS"
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
   #outbound rules
   egress {
     from_port   = 0
@@ -55,7 +71,7 @@ resource "local_file" "TF_key" {
   filename = "tfkey"
 }
 
-# resource "local_file" "Hello_world_challenge" {
-#         content     = file("C:\\Users\\P432884\\OneDrive - Nationwide Building Society\\Desktop\\Hello-world-challenge\\app.py")
-#         filename    = "C:\\Users\\P432884\\OneDrive - Nationwide Building Society\\Desktop\\Copy_folder\\copy_app.py"
+# resource "local_file" "HWC_Copy" {
+#         content     = file ("/Users/Thom.Benjamins/Desktop/HWC/app.py")
+#         filename    = "/Users/Thom.Benjamins/Desktop/HWC-Copy/app_copy.py"
 # }
