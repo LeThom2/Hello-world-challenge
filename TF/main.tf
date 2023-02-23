@@ -7,7 +7,7 @@ resource "aws_instance" "EC2-TF" {
   instance_type   = var.instance_type
   security_groups = [aws_security_group.TF_security_group.name]
   key_name = "TF_key"
-  user_data = file("logstashP2P.sh")
+  user_data = file("filebeat.sh")
 
   tags = {
     Name = "EC2-TF"
@@ -18,7 +18,7 @@ resource "aws_instance" "EC2-TF" {
 resource "aws_security_group" "TF_security_group" {
   name        = "security group using terraform"
   description = "security group using terraform"
-  vpc_id      = "vpc-09f4f519ea56af99f"
+  vpc_id      = "vpc-02d198584f7bcf660"
 
   #inbound rules
   ingress {
