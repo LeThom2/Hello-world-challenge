@@ -3,12 +3,12 @@ resource "aws_security_group" "TF_security_group" {
   description = "security group using terraform"
   vpc_id      = ""
 
-  #inbound rules
+  # inbound rules
   ingress {
     description = "Allow all incoming ICMP IPv4 traffic"
-    from_port = -1
-    to_port = -1
-    protocol = "icmp"
+    from_port   = -1
+    to_port     = -1
+    protocol    = "icmp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
@@ -53,7 +53,7 @@ resource "aws_security_group" "TF_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   #outbound rules
   egress {
     from_port   = 0

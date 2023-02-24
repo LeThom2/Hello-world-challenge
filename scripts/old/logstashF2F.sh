@@ -1,14 +1,14 @@
 #! /bin/bash
 # File2File script: installs logstash which reads one file and writes that to another
 
-#update VM and install Java for Logstash
+# Update VM and install Java for Logstash
 yum update -y
 yum install java -y
 
-#Redhat package manager to import repo
+# Redhat package manager to import repo
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-# Incliude config into logstash.repo
+# Include config into logstash.repo
 logstash="[logstash-8.x]
 name=Elastic repository for 8.x packages
 baseurl=https://artifacts.elastic.co/packages/8.x/yum

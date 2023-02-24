@@ -1,5 +1,5 @@
 #! /bin/bash
-# Install and run kibana on separate server
+# Install Logstash and configure pipelines
 
 #update VM and install Java for Logstash
 yum update -y
