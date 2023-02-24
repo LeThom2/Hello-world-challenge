@@ -1,7 +1,5 @@
 #! /bin/bash
 
-#PUBLIC_IP="$(curl http://checkip.amazonaws.com)"
-
 echo "server.port: 5601
 server.host: "0.0.0.0"
 
