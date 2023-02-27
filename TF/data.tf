@@ -22,6 +22,13 @@ data "template_cloudinit_config" "user_scripts_EKF" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile(
+      "${path.module}./scripts/python-app.sh",
+      {}
+    )
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile(
       "${path.module}./scripts/EKF-install.sh",
       {}
     )

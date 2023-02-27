@@ -5,7 +5,7 @@ filebeatyaml="filebeat.inputs:
   id: my-filestream-id
   enabled: true
   paths:
-    - /var/log/inputfile.log
+    - /var/log/std.log
 
 filebeat.config.modules:
   path: /etc/filebeat/modules.d/*.yml

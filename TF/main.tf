@@ -7,25 +7,37 @@ resource "aws_instance" "logstash_server" {
   instance_type   = var.instance_type
   security_groups = [aws_security_group.TF_security_group.name]
   key_name        = "TF_key"
-  user_data       = "${data.template_cloudinit_config.user_scripts_logstash.rendered}"
+  #user_data       = "${file("./scripts/python")}"
   private_ip      = "172.31.13.1"
 
   tags = {
     Name = "logstash_server"
   }
 }
-resource "aws_instance" "EKF_server" {
-  ami             = var.ami
-  instance_type   = var.instance_type
-  security_groups = [aws_security_group.TF_security_group.name]
-  key_name        = "TF_key"
-  user_data       = "${data.template_cloudinit_config.user_scripts_EKF.rendered}"
-  private_ip      = "172.31.13.2"
+# resource "aws_instance" "logstash_server" {
+#   ami             = var.ami
+#   instance_type   = var.instance_type
+#   security_groups = [aws_security_group.TF_security_group.name]
+#   key_name        = "TF_key"
+#   user_data       = "${data.template_cloudinit_config.user_scripts_logstash.rendered}"
+#   private_ip      = "172.31.13.1"
 
-  tags = {
-    Name = "EKF_server"
-  }
-}
+#   tags = {
+#     Name = "logstash_server"
+#   }
+# }
+# resource "aws_instance" "EKF_server" {
+#   ami             = var.ami
+#   instance_type   = var.instance_type
+#   security_groups = [aws_security_group.TF_security_group.name]
+#   key_name        = "TF_key"
+#   user_data       = "${data.template_cloudinit_config.user_scripts_EKF.rendered}"
+#   private_ip      = "172.31.13.2"
+
+#   tags = {
+#     Name = "EKF_server"
+#   }
+# }
 
 resource "aws_key_pair" "TF_key" {
   key_name   = "TF_key"
