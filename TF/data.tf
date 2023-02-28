@@ -22,13 +22,6 @@ data "template_cloudinit_config" "user_scripts_EKF" {
   part {
     content_type = "text/x-shellscript"
     content = templatefile(
-      "${path.module}./scripts/python-app.sh",
-      {}
-    )
-  }
-  part {
-    content_type = "text/x-shellscript"
-    content = templatefile(
       "${path.module}./scripts/EKF-install.sh",
       {}
     )
@@ -45,7 +38,7 @@ data "template_cloudinit_config" "user_scripts_EKF" {
     content = templatefile(
       "${path.module}./scripts/kibana-config.sh",
       {
-        PUBLIC_IP="$(curl http://checkip.amazonaws.com)"
+        PUBLIC_IP = "$(curl http://checkip.amazonaws.com)"
       }
     )
   }
@@ -53,6 +46,13 @@ data "template_cloudinit_config" "user_scripts_EKF" {
     content_type = "text/x-shellscript"
     content = templatefile(
       "${path.module}./scripts/filebeat-config.sh",
+      {}
+    )
+  }
+  part {
+    content_type = "text/x-shellscript"
+    content = templatefile(
+      "${path.module}./scripts/python-app.sh",
       {}
     )
   }

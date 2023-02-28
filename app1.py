@@ -1,6 +1,4 @@
-#! /bin/bash
-
-echo "import logging
+import logging
 import time
 import random
 
@@ -23,7 +21,4 @@ while(True):
     msg_list = [msg1, msg2, msg3]
     message = random.choice(msg_list)
     logger.info(message)
-    time.sleep(delay)" >> /var/log/app1.py
-
-cd /var/log
-python app.py
+    time.sleep(delay)
