@@ -23,7 +23,7 @@ while(True):
     msg_list = [msg1, msg2, msg3]
     message = random.choice(msg_list)
     logger.info(message)
-    time.sleep(delay)" >> /var/log/app1.py
+    time.sleep(delay)" >> /var/log/app.py
 
 cd /var/log
 python app.py

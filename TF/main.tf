@@ -43,28 +43,31 @@ resource "local_file" "TF_key" {
   filename = "tfkey"
 }
 
-# provider "elasticsearch" {
-#     urls     = "${PUBLIC_IP}:9200"
+# terraform {
+#   required_providers {
+#     elasticsearch = {
+#       source = "disaster37/elasticsearch"
+#       version = "8.4.0"
+#       urls     = "${PUBLIC_IP}"
+
+#       }
+#     aws = {
+#       source = "hashicorp/aws"
+#       version = "4.53.0"
+#       }
+#   }
 # }
 # resource elasticsearch_index_lifecycle_policy "ilm" {
 #   name = "terraform-ilm"
 #   policy = <<EOF
 # {
 #   "policy": {
-#     "phases": {
-#       "hot": {
-#         "min_age": "0ms",
-#         }
-#       },
 #       "delete": {
 #         "min_age": "1d",
 #         "actions": {
-#           "delete": {
-#             "delete_searchable_snapshot": true
-#           }
+#           "delete": {}
 #         }
 #       }
-#     }
 #   }
 # }
 # EOF
