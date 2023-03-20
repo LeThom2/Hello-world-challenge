@@ -1,0 +1,17 @@
+# EnvVar2.yml playbook -> Playbook that will look for 'MESSAGE' in .env file and replace that message with -line:" "
+# -> After that it will echo the .env file
+
+---
+- name: Insert envVar using Ansible
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: "Insert line in .env file"
+      ansible.builtin.lineinfile:
+        path: /Users/Thom.Benjamins/Desktop/hwc/.env
+        regexp: '^MESSAGE='
+        line: MESSAGE=Hello World!!!
+
+    - name: "Echo .env"
+      ansible.builtin.debug:
+        msg: " {{lookup('ansible.builtin.file', '/Users/Thom.Benjamins/Desktop/hwc/.env') }}"
