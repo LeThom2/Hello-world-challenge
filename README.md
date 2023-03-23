@@ -3,20 +3,21 @@ My Hello world challenge as part of the new starter onboarding in the Horizon te
 These are merely notes for myself
 
 ## Requirements
-Install: Python(3), Terraform, Elasticsearch, Logstash, Kibana, Filebeat, Ansible
-Access to AWS account
+* Install: Python(3), Terraform, Elasticsearch, Logstash, Kibana, Filebeat, Ansible
+* Access to AWS account
+* Google Chrome
 
 ### Launch
-Elasticsearch -> Kibana -> Filebeat -> Logstash
+* Elasticsearch -> Kibana -> Filebeat -> Logstash
 
 ### Manual
-'pip install python-dotenv' to make use of .env file
+* 'pip install python-dotenv' to make use of .env file
 
-Run 'python(3) app.py' -> Prints string and creates logs to track, with added verbosity.
+* Run 'python(3) app.py' -> Prints string and creates logs to track, with added verbosity.
 
 #### Terraform ->
-terraform init -> terraform plan -> terraform apply.
-Make sure TF.exe is in environment variables on OS
+* terraform init -> terraform plan -> terraform apply.
+* Make sure TF.exe is in environment variables on OS
 
 #### Ansible ->
-(Windows) Launch Ubuntu, ls to see available playbooks, if none: create, to run: 'Ansible-playbook <playbook_name>'
+* (Windows) Launch Ubuntu, ls to see available playbooks, if none: create, to run: 'Ansible-playbook <playbook_name>'
