@@ -6,7 +6,4 @@
 *.tfstate
 *.tfstate.*
 
-# .log files
-*.log
-
 tfkey
