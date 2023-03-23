@@ -46,7 +46,9 @@ data "template_cloudinit_config" "user_scripts_EKF" {
     content_type = "text/x-shellscript"
     content = templatefile(
       "${path.module}./scripts/filebeat-config.sh",
-      {}
+      {
+        PUBLIC_IP = "$(curl http://checkip.amazonaws.com)"
+      }
     )
   }
   part {
@@ -56,4 +58,13 @@ data "template_cloudinit_config" "user_scripts_EKF" {
       {}
     )
   }
+  # part {
+  #   content_type = "text/x-shellscript"
+  #   content = templatefile(
+  #     "${path.module}./scripts/launch-kibana.sh",
+  #     {
+  #       PUBLIC_IP = "$(curl http://checkip.amazonaws.com)"
+  #     }
+  #   )
+  # }
 }
