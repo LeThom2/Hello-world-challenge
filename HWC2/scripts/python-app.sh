@@ -27,5 +27,3 @@ while(True):
 
 cd /var/log
 python app.py
-
-start "chrome.exe" http://${PULBIC_IP}:5601
