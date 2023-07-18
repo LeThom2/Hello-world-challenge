@@ -1,0 +1,5 @@
+PUBLIC_IP = "$(curl http://checkip.amazonaws.com)"
+server.port: 5601
+server.host: "0.0.0.0"
+
+elasticsearch.hosts: 'http://${PUBLIC_IP}:9200'
