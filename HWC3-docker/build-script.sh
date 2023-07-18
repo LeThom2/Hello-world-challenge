@@ -19,4 +19,4 @@ for dir in "${images[@]}"; do
 done
 
 # Wait for all background processes to finish
-wait
+wait 
